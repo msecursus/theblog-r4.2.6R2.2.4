@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		
+		<strong>
+			Placed by : <%=comment.name %>
+		</strong>
+	
+		
+	</div>
+
+	<div class="panel-body">
+		
+			<p><strong> >> : </strong><%=comment.body %></p>
+			
+			
+	
+		<p>
+			<%= link_to 'Delete', [comment.post, comment], method: :delete, data: {confirm: "SURE ??? Delete comment ???"} %>
+		</p>
+	</div>
+	
+</div>
+
+
+
+
+
+
