@@ -34,6 +34,9 @@
 
                     <li><%= link_to "About", about_path %></li>
                     <li><%= link_to "New Post", new_post_path %></li>
+                    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                    <li><%= link_to "Sign In", new_user_session_path %></li>
+                    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
                         
                 </ul>
             </div>
@@ -42,9 +45,10 @@
         <!-- /.container -->
     </nav>
 <!-- End Navigation -->
-
+    
 	<% if flash[:notice] %>
-		<div class="notice"><%= flash[:notice] %></div>
+		<!--<div class="notice"><%= flash[:notice] %></div>-->
+        <%= bootstrap_flash %>
 	<% end %>
 
 	<%= yield %>
