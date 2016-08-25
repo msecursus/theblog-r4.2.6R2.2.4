@@ -136,6 +136,8 @@ hr.small {
     -o-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
+
+  
 }
 .intro-header {
   
@@ -286,9 +288,14 @@ hr.small {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
+
 footer {
   padding: 50px 0 65px;
+  
 }
+
+
 footer .list-inline {
   margin: 0;
   padding: 0;
@@ -416,3 +423,5 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #0085A1;
 }
+
+
