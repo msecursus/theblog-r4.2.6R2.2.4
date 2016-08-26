@@ -1,19 +1,20 @@
 class PostsController < ApplicationController
-	#before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	
 	def index
 		@posts = Post.all.order("created_at DESC")
 		
 	end
 
 	def new
+		@post = Post.new
 		
-		@post = current_user.posts.build
 		
 	end
 
 	def create
 		
-		@post = current_user.posts.build(post_params)
+		@post = Post.new(post_params)
 		
     	if @post.save
 	      	flash[:notice] = "OK"
@@ -24,17 +25,17 @@ class PostsController < ApplicationController
     end
 
 	def show
-		@post = Post.find(params[:id])
+		
 		
 	end				
 
 	def edit
-		@post = Post.find(params[:id])
+		
 		
 	end
 
 	def update
-		@post = Post.find(params[:id])
+		
 		if @post.update(post_params)
 		 flash[:notice] = "OK"
 		redirect_to post_path(@post)
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		@post = Post.find(params[:id])
+		
 		@post.destroy
 		 flash[:notice] = "OK"
 		redirect_to posts_path
@@ -53,10 +54,10 @@ class PostsController < ApplicationController
 	
 	
 private
-	#def find_post
-		#@post = Post.find(params[:id])
+	def find_post
+		@post = Post.find(params[:id])
 		
-	#end
+	end
 	def post_params
 		params.require(:post).permit(:title, :body)
 		
