@@ -21,12 +21,16 @@
 
             	<% @posts.each do |post| %>
 	            	<div class="post-preview">
-	                    <a href="post.html">
-	                        <h2 class="post-title">
-	                            <%= link_to post.title, post_path(post) %>
-	                        </h2>
-	                     </a>
-	                    <p class="post-meta">
+	                    
+                         <h2 class="post-title">
+                            <%= link_to post.title, post_path(post) %>
+                         </h2>
+
+                    
+                         
+	                     <p><%= truncate(post.body) %></p>
+
+	                     <p class="post-meta">
 	                    	<%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: "SURE ??? Delete ???"} %>
 	                    </p>
 	                </div>
